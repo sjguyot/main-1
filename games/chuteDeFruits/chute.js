@@ -92,6 +92,28 @@ function test() {
         }
 
 }
+function go_left() {
+	if (marge===-250) {
+	}
+	else {
+		marge-=50;
+		document.getElementById("panier").removeAttribute("style");
+		document.getElementById("panier").setAttribute("style","margin-left:"+marge+"px;visibility:visible;");
+		marge = parseInt(marge);
+		console.log(marge);
+	}
+}
+function go_right() {
+	if (marge===250) {
+	}
+	else {
+		marge+=50;
+		document.getElementById("panier").removeAttribute("style");
+		document.getElementById("panier").setAttribute("style","margin-left:"+marge+"px;visibility:visible;");
+		marge = parseInt(marge);
+		console.log(marge);
+	}
+} 
 
 document.addEventListener("keydown",(event) => {
 	const touche = event.key;
@@ -99,29 +121,9 @@ document.addEventListener("keydown",(event) => {
 	if (event.key) {
 
 		if (touche==="ArrowLeft"){
-                        if (marge===-250) {
-                        }
-
-                        else {
-                                marge-=50;
-		                document.getElementById("panier").removeAttribute("style");
-                                document.getElementById("panier").setAttribute("style","margin-left:"+marge+"px;visibility:visible;");
-                                marge = parseInt(marge);
-                                console.log(marge);
-                        }
-		}
+                        go_left()
                 else if (touche==="ArrowRight"){
-                        if (marge===250) {
-                        }
-
-                        else {
-                                marge+=50;
-                                document.getElementById("panier").removeAttribute("style");
-                                document.getElementById("panier").setAttribute("style","margin-left:"+marge+"px;visibility:visible;");
-                                marge = parseInt(marge);
-                                console.log(marge);
-                        }
-		}
+			go_right()
 		else {
 		}
 	}
